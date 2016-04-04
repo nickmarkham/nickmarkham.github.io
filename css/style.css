@@ -1,0 +1,693 @@
+/*
+Project Name: The Markham Safari Company
+Client: The Markham Safari Company
+Author: Nicholas Markham
+Developer @GA in Singapore
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+
+/* Box Model Hack */
+
+* {
+  -moz-box-sizing: border-box;
+  /* Firexfox */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box;
+  /* IE */
+}
+
+/* Clear fix hack */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clear {
+  clear: both;
+}
+.alignright {
+  float: right;
+  padding: 0 0 10px 10px;
+  /* note the padding around a right floated image */
+}
+.alignleft {
+  float: left;
+  padding: 0 10px 10px 0;
+  /* note the padding around a left floated image */
+}
+
+/******************************************
+/* GLOBAL STYLES
+/*******************************************/
+
+body {
+  background-color: #FFFFFF;
+  color: #777;
+  font: normal 15px "EB Garamond", serif;
+}
+p {
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-weight: bold;
+  color: #444;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 55px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 30px;
+  color: #444;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 80%;
+  border-bottom: 1px solid #862633;
+  padding: 0 0 20px 0;
+}
+h4, h5 {
+  font-size: 24px;
+  font-weight: bold;
+}
+h5 {
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 20px;
+}
+h6 {
+  font-size: 16px;
+  color: #444;
+}
+a {
+  text-decoration: none;
+  color: #444;
+}
+a:hover {
+  color: #000000;
+}
+small {
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+}
+.clear {
+  clear: both;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 80%;
+}
+
+/******************************************
+/* TOP CONTAINER
+/*******************************************/
+
+.topcontainer, .topcontainer_about, .topcontainer_blog, .topcontainer_destinations, .topcontainer_contact {
+  width: 100%;
+  height: 720px;
+  display: block;
+  position: relative;
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.64);
+}
+.topcontainer::after, .topcontainer_about::after, .topcontainer_blog::after, .topcontainer_destinations::after, .topcontainer_contact::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.topcontainer::after {
+  background-image: url("../images/hero_images/lion-bw.jpg");
+}
+.topcontainer_about::after {
+  background-image: url("../images/hero_images/crossing-bw.jpg");
+}
+.topcontainer_blog::after {
+  background-image: url("../images/hero_images/leopard-bw.jpg");
+  opacity: 0.8;
+}
+.topcontainer_destinations::after {
+  background-image: url("../images/hero_images/giraffe-bw.jpg");
+  opacity: 0.9;
+}
+.topcontainer_contact::after {
+  background-image: url("../images/hero_images/contact-us.jpg");
+}
+.topcontainer h2, .topcontainer_about h2, .topcontainer_destinations h2, .topcontainer_contact h2 {
+  margin: 120px 0 40px 0;
+}
+.topcontainer_blog h2 {
+  margin: 0 0 40px 0
+}
+
+/******************************************
+/* HEADER
+/*******************************************/
+
+header {
+  height: 150px;
+  /*background-color: rgba(0,0,0,.0);*/
+  /*background-color: #FFFFFF;*/
+  overflow: hidden;
+}
+header h1 {
+  display: inline-block;
+}
+.logo {
+  height: 150px;
+  margin: 0 0 0 20px;
+}
+header nav {
+  float: right;
+  margin-right: 20px;
+}
+header nav ul li {
+  display: inline-block;
+  margin-top: 40px;
+}
+header nav ul li a {
+  font-size: 18px;
+  color: #862633;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin-right: 15px;
+}
+.hamburger {
+  height: 60px;
+  display: none;
+}
+#mobile {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+#mobile ul {
+  margin-top: 130px;
+  padding-left: 30px;
+  w
+}
+#mobile ul li {
+  display: inline-block;
+  margin-top: 10px;
+}
+#mobile ul li a {
+  font-size: 16px;
+  padding-left: 10px;
+  text-transform: uppercase;
+  color: #862633;
+}
+.button-1, .button-profiles {
+  display: block;
+  text-align: center;
+  background: #862633;
+  border-radius: 3px;
+  color: #fff;
+  width: 30%;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.button-1:hover, .button-profiles:hover {
+  background-color: #fff;
+  color: #862633;
+  width: 32%;
+  border-radius: 3px;
+  height: 54px;
+  font-size: 22px;
+  line-height: 54px;
+}
+.under_construction h3 {
+  color: #862633;
+}
+
+/******************************************
+/* FEATURES
+/*******************************************/
+
+.features {
+  padding: 60px 0;
+  text-align: center;
+  font-size: 0;
+}
+.features > * {
+  font-size: 16px;
+  vertical-align: top;
+}
+.features h3, #profiles h3 {
+  font-size: 30px;
+}
+.features article {
+  width: 40%;
+  height: 300px;
+  display: inline-block;
+  background-color: #f5f5f5;
+}
+.kenya {
+  background: url("../images/giraffe_sunset.jpg");
+}
+.tanzania {
+  background: url("../images/elephant_kili.jpg");
+}
+.rwanda {
+  background: url("../images/gorilla.gif");
+}
+.uganda {
+  background: url("../images/lions_tree.jpg");
+}
+.kenya, .tanzania, .rwanda, .uganda {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #fff;
+  color: #862633;
+  border-radius: 3px;
+}
+.features h4 {
+  font-size: 55px;
+  color: #FFFFFF;
+  padding: 20px 0 0 0;
+}
+.h4wrapper {
+  margin: 0 auto;
+  align-content: center;
+  padding: 0 10px;
+  width: 80%;
+}
+
+/******************************************
+/* PRIMARY CONTENT
+/*******************************************/
+
+.primary-content {
+  background-color: #f8fafa;
+  padding: 60px 0;
+  text-align: center;
+}
+.video {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; //<<--- THIS IS THE KEY
+}
+
+/******************************************
+/* TESTIMONIALS
+/*******************************************/
+
+.testimonials {
+  background-color: #f8fafa;
+  padding: 60px 0;
+  text-align: center;
+  display: block;
+}
+.testimonials blockquote {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 100;
+  padding: 25px 0 20px 0;
+}
+.testimonials span {
+  color: #862633;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/******************************************
+/* CALL TO ACTION
+/*******************************************/
+
+.cta {
+  padding: 60px 0;
+  text-align: center;
+}
+.button-2 {
+  display: block;
+  margin: 0 auto;
+  background: #862633;
+  border: 2px solid #862633;
+  color: #fff;
+  border-radius: 3px;
+  width: 180px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+}
+.button-2:hover {
+  background-color: #fff;
+  color: #862633;
+}
+
+/******************************************
+/* FOOTER
+/*******************************************/
+
+footer {
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 0 0 0;
+}
+#footer-info {
+  width: 33%;
+  float: left;
+  margin-top: 10px;
+}
+#footer-links {
+  width: 50%;
+  float: right;
+}
+#footer-links ul {
+  width: 30%;
+  float: left;
+  margin-left: 20px;
+}
+#footer-links ul li {
+  margin: 10px 0;
+}
+.footnote {
+  width: 100%;
+  display: block;
+}
+
+/******************************************
+/* ENQUIRE FORM
+/*******************************************/
+
+#enquireform {
+  width: 100%;
+  padding: 60px 0;
+  display: none;
+  background-color: #f8fafa;
+}
+form {
+  width: 100%;
+  padding: 25px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: #111 0 0 20px;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  font-size: 24px;
+  color: #862633;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  padding-bottom: 20px;
+}
+textarea {
+  vertical-align: top;
+  resize: vertical;
+  height: 76px;
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+label {
+  position: absolute;
+  font-size: 16px;
+  left: 0;
+  width: 20%;
+}
+.form-row {
+  padding-left: 130px;
+  position: relative;
+  margin-bottom: 13px;
+}
+textarea, input[type="text"], input[type="email"], select {
+  border: 1px solid #BCBCBC;
+  padding: 16px;
+  margin: 0;
+  background: #FFF9E2;
+  font: normal 16px "EB Garamond", serif;
+  border-radius: 4px;
+}
+textarea:focus, input[type="text"]:focus, input[type="email"]:focus, select:focus {
+  background: #FFFFFF;
+  border: 1px solid #99E2FF;
+  outline: none;
+  box-shadow: 0 0 6px #99E2FF;
+}
+input[type="text"], input[type="email"] {
+  height: 10px;
+  margin: 2px 0 0;
+}
+input[type="text"].phonecountry {
+  width: 20%;
+}
+input[type="text"].phonenumber {
+  width: 69.5%;
+}
+.name-fields input {
+  width: 44.75%;
+}
+.email-fields input {
+  width: 90%;
+}
+select {
+  width: 90%;
+}
+.travel-options {
+  line-height: 74px;
+  vertical-align: middle;
+}
+input[type="submit"] {
+  display: block;
+  background: #862633;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  font: normal 16px "EB Garamond", serif;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/******************************************
+/* PEOPLE
+/*******************************************/
+
+.profiles {
+  padding: 60px 0;
+  text-align: center;
+  font-size: 0;
+}
+.profiles > * {
+  font-size: 16px;
+  vertical-align: top;
+}
+.profiles h3 {
+  font-size: 30px;
+}
+.profiles h5 {
+  padding: 20px 0 20px 0;
+  margin: 0;
+}
+.profiles article {
+  display: inline-block;
+  background-color: #f5f5f5;
+  border: 1px solid #BCBCBC;
+  border-radius: 180px;
+  overflow: hidden;
+}
+.exec1 {
+  width: 330px;
+  height: 330px;
+  background: url("../images/profiles/profiles-1.png");
+}
+.exec2 {
+  width: 330px;
+  height: 330px;
+  background: url("../images/profiles/profiles-2.png");
+}
+.leader1 {
+  width: 330px;
+  height: 330px;
+  background: url("../images/profiles/profiles-4.png");
+}
+.leader2 {
+  width: 330px;
+  height: 330px;
+  background: url("../images/profiles/profiles-3.png");
+}
+.team1 {
+  width: 270px;
+  height: 270px;
+  background: url("../images/profiles/profiles-6.jpg");
+}
+.team2 {
+  width: 270px;
+  height: 270px;
+  background: url("../images/profiles/profiles-5.jpg");
+}
+.team3 {
+  width: 270px;
+  height: 270px;
+  background: url("../images/profiles/profiles-8.jpg");
+}
+.team4 {
+  width: 270px;
+  height: 270px;
+  background: url("../images/profiles/profiles-7.jpg");
+}
+.exec1, .exec2, .leader1, .leader2, .team1, .team2, .team3, .team4 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+article h4 {
+  font-size: 36px;
+  color: #862633;
+  padding: 140px 0 0 0;
+}
+.button-profiles {
+  display: block;
+  text-align: center;
+  background: #862633;
+  color: #fff;
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/******************************************
+/* DESTINATIONS
+/*******************************************/
+
+#destinations {
+  margin-top: 80px;
+}
+.posts {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+.post {
+  border-bottom: 1px solid #043049;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+#destinations_KE, #destinations_TZ, #destinations_RW, #destinations_UG {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /*background-attachment: fixed;*/
+}
+#destinations_KE {
+  background-image: url("../images/wilderbeest.jpg");
+}
+#destinations_TZ {
+  background-image: url("../images/hippo-main.jpg");
+}
+#destinations_RW {
+  background-image: url("../images/gorilla-male.jpg");
+}
+#destinations_UG {
+  background-image: url("../images/cheetah-sunset.jpg");
+}
+.readmore {
+  text-align: right;
+  margin-top: 30px;
+}
+.readmore a {
+  color: #043049;
+  font-weight: 600;
+}
+#buttons {
+  margin: 2%;
+}
+.button-KE, .button-TZ, .button-RW, .button-UG {
+  display: inline-block;
+  text-align: center;
+  background: #862633;
+  border-radius: 3px;
+  color: #fff;
+  width: 24.5%;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+}
+.button-KE:hover, .button-TZ:hover, .button-RW:hover, .button-UG:hover {
+  background-color: #fff;
+  color: #862633;
+  border-bottom: 1px solid #862633;
+}
+
+/******************************************
+/* CONTACT US
+/*******************************************/
+
+.contact {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 60px 0;
+}
+.contact ul {
+  margin: 60px 0 0 0;
+}
+.contact ul li {
+  font-size: 30px;
+  width: 33%;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.contact ul li:hover {
+  font-size: 40px;
+}
+.contact h4 {
+  font-size: 30px;
+}
+.contact p {
+  font-size: 18px;
+}
